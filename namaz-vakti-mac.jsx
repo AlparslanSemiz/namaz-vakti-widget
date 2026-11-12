@@ -129,6 +129,13 @@ if (cacheBugune && cache.lat != null && ayniYer(lat, lon, cache.lat, cache.lon))
   }
 }
 
+// İnternet yok ve önbellek de boşsa (ör. ilk kurulumda bağlantı yoksa) çökmek
+// yerine boş bir tablo ve uyarı gösterilir; bağlantı gelince widget kendini toparlar.
+const cevrimdisi = !timings;
+if (cevrimdisi) {
+  timings = { Fajr: "--:--", Sunrise: "--:--", Dhuhr: "--:--", Asr: "--:--", Maghrib: "--:--", Isha: "--:--" };
+}
+
 // Saatleri dakikaya çevirme
 function getMins(timeStr) {
   const parts = timeStr.split(':');
@@ -155,16 +162,16 @@ for (let i = 0; i < 5; i++) {
 }
 if (currentMins >= p[5].mins || currentMins < p[0].mins) { activeIdx = 5; }
 
-const nextIdx = (activeIdx + 1) % 6;
-let diff = p[nextIdx].mins - currentMins;
+// Çevrimdışıyken hiçbir vakit vurgulanmaz
+const nextIdx = cevrimdisi ? -1 : (activeIdx + 1) % 6;
+let diff = cevrimdisi ? 0 : p[nextIdx].mins - currentMins;
 if (diff < 0) diff += 24 * 60;
 
 const hLeft = Math.floor(diff / 60);
 const mLeft = diff % 60;
-const timeLeftStr = hLeft > 0 ? `${hLeft}sa ${mLeft}dk` : `${mLeft}dk`;
+const timeLeftStr = cevrimdisi ? "bağlantı yok" : (hLeft > 0 ? `${hLeft}sa ${mLeft}dk` : `${mLeft}dk`);
 
-const activeName = p[activeIdx].name;
-const nextName = p[nextIdx].name;
+const activeName = cevrimdisi ? "Vakitler" : p[activeIdx].name;
 
 // Kerahat vakti (sembolik uyarı)
 let isKerahat = false;

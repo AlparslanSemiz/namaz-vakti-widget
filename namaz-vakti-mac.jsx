@@ -14,7 +14,7 @@ const METHOD = 13; // Diyanet İşleri Başkanlığı
 const FALLBACK = { lat: 49.0069, lon: 8.4037, city: "Karlsruhe" };
 // Konumu elle sabitlemek istersen (izin gerektirmez) alttaki satırı doldur,
 // ör: const SABIT_KONUM = { lat: 41.0082, lon: 28.9784, city: "İstanbul" };
-const SABIT_KONUM = { lat: 41.0082, lon: 28.9784, city: "İstanbul" };
+const SABIT_KONUM = null;
 
 // --- Bugünün tarihi (Aladhan formatı: DD-MM-YYYY) ---
 const today = new Date();

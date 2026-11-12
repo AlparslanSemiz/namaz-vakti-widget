@@ -2,9 +2,6 @@
 
 macOS / iOS için [ScriptWidget](https://apps.apple.com/app/scriptwidget/id1555600758) üzerinde çalışan, bulunduğun konuma göre namaz vakitlerini gösteren sade bir widget. Konumu otomatik algılar, Diyanet hesaplama yöntemini kullanır ve günde yalnızca **bir kez** internete çıkar.
 
-![Önizleme](preview.png)
-<!-- İstersen widget'ın bir ekran görüntüsünü preview.png adıyla repoya ekleyebilirsin; eklemezsen bu satırı silebilirsin. -->
-
 ## Özellikler
 
 - **Otomatik konum** — cihazın konum servisleri (`$location` / CoreLocation) ile bulunduğun yeri algılar.
@@ -16,7 +13,7 @@ macOS / iOS için [ScriptWidget](https://apps.apple.com/app/scriptwidget/id15556
 ## Kurulum
 
 1. App Store'dan **ScriptWidget** uygulamasını indir.
-2. Uygulamada yeni bir script oluştur ve [`namaz-vakti.js`](namaz-vakti.js) dosyasının içeriğini yapıştır.
+2. Uygulamada yeni bir script oluştur ve [`namaz-vakti-mac.jsx`](namaz-vakti-mac.jsx) dosyasının içeriğini yapıştır.
 3. **Konum iznini ver:**
    - macOS: Sistem Ayarları → Gizlilik ve Güvenlik → Konum Servisleri → ScriptWidget → açık.
    - iOS: Ayarlar → ScriptWidget → Konum → "Uygulamayı Kullanırken".

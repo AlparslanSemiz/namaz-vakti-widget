@@ -1,14 +1,14 @@
-# 🌙 Namaz Vakti — ScriptWidget
+# 🌙 Namaz Vakti (ScriptWidget)
 
 macOS / iOS için [ScriptWidget](https://apps.apple.com/app/scriptwidget/id1555600758) üzerinde çalışan, bulunduğun konuma göre namaz vakitlerini gösteren sade bir widget. Konumu otomatik algılar, Diyanet hesaplama yöntemini kullanır ve günde yalnızca **bir kez** internete çıkar.
 
 ## Özellikler
 
-- **Otomatik konum** — cihazın konum servisleri (`$location` / CoreLocation) ile bulunduğun yeri algılar.
-- **Diyanet yöntemi** — vakitler [Aladhan API](https://aladhan.com/prayer-times-api) `method=13` (Diyanet İşleri Başkanlığı) ile hesaplanır.
-- **Şu anki vakit + kalan süre** — örn. `İkindi · 2sa 41dk`.
-- **Günde 1 ağ isteği** — veriler `$storage` ile önbelleğe alınır; gün değişene kadar tekrar internete çıkılmaz, ertesi gün otomatik yenilenir.
-- **Kerahat uyarısı** — kerahat vakitlerinde `⚠️` işareti.
+- **Otomatik konum**: cihazın konum servisleri (`$location` / CoreLocation) ile bulunduğun yeri algılar.
+- **Diyanet yöntemi**: vakitler [Aladhan API](https://aladhan.com/prayer-times-api) `method=13` (Diyanet İşleri Başkanlığı) ile hesaplanır.
+- **Şu anki vakit + kalan süre**: örn. `İkindi · 2sa 41dk`.
+- **Günde 1 ağ isteği**: veriler `$storage` ile önbelleğe alınır; gün değişene kadar tekrar internete çıkılmaz, ertesi gün otomatik yenilenir.
+- **Kerahat uyarısı**: kerahat vakitlerinde `⚠️` işareti.
 
 ## Kurulum
 
@@ -25,8 +25,8 @@ macOS / iOS için [ScriptWidget](https://apps.apple.com/app/scriptwidget/id15556
 
 Dosyanın en üstündeki ayarlardan değiştirebilirsin:
 
-- `FALLBACK` — konum alınamazsa kullanılacak yedek koordinat ve şehir. Varsayılan: Karlsruhe.
-- `METHOD` — hesaplama yöntemi. `13` = Diyanet. Diğer yöntemler için Aladhan dokümanına bakabilirsin.
+- `FALLBACK`: konum alınamazsa kullanılacak yedek koordinat ve şehir. Varsayılan: Karlsruhe.
+- `METHOD`: hesaplama yöntemi. `13` = Diyanet. Diğer yöntemler için Aladhan dokümanına bakabilirsin.
 
 ## Nasıl çalışır?
 
